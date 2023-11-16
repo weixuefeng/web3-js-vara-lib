@@ -70,7 +70,14 @@ async function calculateFeeForVaraTransfer(mnemonic, to, amount, rpc, networkTyp
 }
 
 
-window.varaNetwork = {
+// window.varaNetwork = {
+//   createWalletByMnemonic,
+//   getVaraBalance,
+//   calculateFeeForVaraTransfer,
+//   transferVara
+// }
+
+var varaNetwork = {
   createWalletByMnemonic,
   getVaraBalance,
   calculateFeeForVaraTransfer,
