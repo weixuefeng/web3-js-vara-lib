@@ -12,10 +12,18 @@ async function testCalculateFee() {
     console.log("fee:", fee);
 }
 
+async function testTransfer() {
+    var res = await vara.transferVara(config.mnemonic, config.toAddress, 100, config.rpc, config.networkType);
+    console.log("res:", res);
+}
 
+async function testGetBalance() {
+    var balance = await vara.getVaraBalance(config.toAddress, config.rpc);
+    console.log("balance:", balance);
+}
 
 function test() {
-    testCalculateFee()
+    testGetBalance()
 }
 
 test()
