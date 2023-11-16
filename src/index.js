@@ -3,13 +3,13 @@
 // import { sr25519PairFromSeed, } from '@polkadot/util-crypto/sr25519'
 // import { GearApi } from '@gear-js/api'
 // import { cryptoWaitReady, mnemonicToMiniSecret } from '@polkadot/util-crypto'
+const { Buffer } = require('buffer');
 
 const {Keyring} = require("@polkadot/keyring")
 const {u8aToHex, isHex} = require("@polkadot/util")
 const {sr25519PairFromSeed} = require("@polkadot/util-crypto/sr25519")
 const {GearApi} = require("@gear-js/api")
 const {cryptoWaitReady, mnemonicToMiniSecret} = require("@polkadot/util-crypto")
-
 
 function buf2hex(buffer) { // buffer is an ArrayBuffer
   return [...new Uint8Array(buffer)]
@@ -70,7 +70,7 @@ async function calculateFeeForVaraTransfer(mnemonic, to, amount, rpc, networkTyp
 }
 
 
-const varaNetwork = {
+window.varaNetwork = {
   createWalletByMnemonic,
   getVaraBalance,
   calculateFeeForVaraTransfer,
